@@ -2,12 +2,10 @@
 
 string intestazione=addresses.ReadLine();
 List<Address> list = new List<Address>();
-List<Address> listaCorrotta = new List<Address>();
 while (!addresses.EndOfStream)
 {
     try
     {
-        
         string linea = addresses.ReadLine();
         string[] data = linea.Split(",");
         string name = data[0];
@@ -36,10 +34,9 @@ stampa(list);
 
 void stampa(List<Address> list)
 {
-    Console.WriteLine("-----\tName \tSurname \tStreet \tCity \tProvince \tZIP-----");
     foreach (Address address in list)
     {
-        Console.WriteLine($"\t{address.Name} \t{address.Surname} \t{address.Street} \tCity \t{address.Province} \t{address.Zip}");
+        Console.WriteLine($"Name: {address.Name}| Surname: {address.Surname}| Street: {address.Street}| City: {address.City}| Province: {address.Province}| ZIP: {address.Zip}|");
     }
 }
 public class Address
